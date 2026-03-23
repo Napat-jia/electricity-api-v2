@@ -50,4 +50,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node-hello-world:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/electricity-API-V2
