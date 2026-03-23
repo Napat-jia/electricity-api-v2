@@ -69,11 +69,6 @@ app.get('/api/users/history/:province', (req, res) => {
   res.json(result);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-
 // 3. API: Usage by province and year
 app.get('/api/usage/:province/:year', (req, res) => {
   const { province, year } = req.params;
@@ -102,3 +97,8 @@ app.get('/api/users/:province/:year', (req, res) => {
   res.json(result || { message: 'Data not found' });
 });
 
+if (process.env.NODE_ENV !== 'test') {
+ app.listen(PORT, () => console.log(`Server running on port
+${PORT}`));
+}
+module.exports = app; // Export for testing
